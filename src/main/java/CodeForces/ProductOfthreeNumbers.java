@@ -1,4 +1,4 @@
-package org.example;
+package CodeForces;
 
 import java.util.Scanner;
 
