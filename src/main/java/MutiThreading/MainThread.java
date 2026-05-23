@@ -6,7 +6,7 @@ public class MainThread {
 
         System.out.println("Main Thread started");
         Thread th1 = new Thread(() -> {
-            System.out.println("Thread1 is using consume method");
+            System.out.println("Thread1 is using Produce method");
             resource.produce();
         });
         Thread th2 = new Thread(() -> {
@@ -16,9 +16,11 @@ public class MainThread {
             } catch (Exception e) {
                 Thread.currentThread().interrupt();
             }
-            System.out.println("Thread2 is using consume method");
+            System.out.println("Thread2 is using produce method");
             resource.produce();
         });
+//        th1.setPriority(5);
+        th1.setDaemon(true);
         th1.start();
 //        th2.start();
 //
@@ -27,12 +29,13 @@ public class MainThread {
 //        } catch (Exception e) {
 //            Thread.currentThread().interrupt();
 //        }
-        try {
-            System.out.println("main Thread is waiting for thread 1 task to finish");
-            th1.join();
-        } catch (Exception e) {
-            Thread.currentThread().interrupt();
-        }
+        //join examples
+//        try {
+//            System.out.println("main Thread is waiting for thread 1 task to finish");
+//            th1.join();
+//        } catch (Exception e) {
+//            Thread.currentThread().interrupt();
+//        }
         System.out.println("Main Thread is finishing its work");
 
     }
