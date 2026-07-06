@@ -23,7 +23,7 @@ public class SharedResouceOfReadWriteLock {
     public void consume(ReadWriteLock lock) {
         try {
             lock.writeLock().lock();
-            System.out.println("Write lock acquired by" + Thread.currentThread().getName());
+            System.out.println("Write lock acquired by:" + Thread.currentThread().getName());
             isAvailable = false;
         } catch (Exception e) {
             Thread.currentThread().interrupt();

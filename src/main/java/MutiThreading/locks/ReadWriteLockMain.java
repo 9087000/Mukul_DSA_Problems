@@ -21,7 +21,7 @@ public class ReadWriteLockMain {
         SharedResouceOfReadWriteLock resouce1 = new SharedResouceOfReadWriteLock();
 
         Thread th3 = new Thread(() -> {
-            resouce1.consume(lock);
+            resource.consume(lock);
         });
 
         th1.start();
