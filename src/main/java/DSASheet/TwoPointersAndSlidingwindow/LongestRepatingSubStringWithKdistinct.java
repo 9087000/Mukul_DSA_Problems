@@ -12,8 +12,8 @@ import java.util.Map;
 //update answer
 public class LongestRepatingSubStringWithKdistinct {
     public static void main(String args[]) {
-        String s = "aaabbcc";
-        int k = 2;
+        String s = "aabb";
+        int k = 3;
         int longest = longestRepeatingSubString(s, k);
         System.out.println(longest);
     }
